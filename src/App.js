@@ -8,6 +8,7 @@ import {
   StatusBar,
   StyleSheet,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 
 import api from './services/api';
@@ -40,6 +41,7 @@ export default function App() {
     <>
       <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
       <SafeAreaView style={styles.container}>
+        <ScrollView>
         {repositories.map(repository => (
           <View style={styles.repositoryContainer} key={repository.id}>
             <Text style={styles.repository}>{repository.title}</Text>
@@ -68,6 +70,7 @@ export default function App() {
             </TouchableOpacity>
           </View>
         ))}
+        </ScrollView>
       </SafeAreaView>
     </>
   );
